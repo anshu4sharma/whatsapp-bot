@@ -18,7 +18,7 @@ client.on("message", async (msg) => {
     const chat = await msg.getChat();
     const contact = await msg.getContact();
     await chat.sendMessage(`Hello @${contact.id.user} Thanks for messaging, Please checkout https://anshusharma.me 
-   ${await contact.getProfilePicUrl() ?? ` Here is your Profile Link ${await contact.getProfilePicUrl()}`}  ${await contact.getAbout() ?? `and your bio is ${await contact.getAbout()}`}`, {
+   ${await contact.getProfilePicUrl() && ` Here is your Profile Link ${await contact.getProfilePicUrl()}`}  ${await contact.getAbout() && `and your bio is ${await contact.getAbout()}`}`, {
         mentions: [contact],
     });
 });
